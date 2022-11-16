@@ -1,0 +1,25 @@
+<div class="dashboard">
+  <header>
+    <span>Google Login Test</span>
+    <button (click)="logout()" *ngIf="profile">Logout</button>
+  </header>
+  <div class="content">
+    <h2>This is the dasboard page.</h2>
+    <hr>
+    <br>
+    <div class="profile" *ngIf="profile">
+      <table>
+        <tr>
+          <td>
+            <img [src]="profile.avatar" alt="">
+          </td>
+          <td>
+            <h3>{{profile.fullName}}</h3>
+            <p>{{profile.email}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+

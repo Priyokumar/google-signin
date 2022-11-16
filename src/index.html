@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+  <app-root></app-root>
+  <script referrerpolicy="no-referrer-when-downgrade" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function handleCredentialResponse(response) {
+      // decodeJwtResponse() is a custom function defined by you
+      // to decode the credential response.
+      if (!localStorage.getItem("g_token")) {
+        localStorage.setItem("g_token", response.credential)
+        window.location.reload();
+      }
+
+      /* const responsePayload = decodeJwtResponse();
+      console.log("ID: " + responsePayload.sub);
+      console.log('Full Name: ' + responsePayload.name);
+      console.log('Given Name: ' + responsePayload.given_name);
+      console.log('Family Name: ' + responsePayload.family_name);
+      console.log("Image URL: " + responsePayload.picture);
+      console.log("Email: " + responsePayload.email); */
+    }
+  </script>
+</body>
+
+</html>
